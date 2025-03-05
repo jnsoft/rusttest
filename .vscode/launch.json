@@ -2,21 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug",
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=rusttest",
-                    "--package=rusttest",
-                    "--manifest-path=Cargo.toml"
-                ],
-                "filter": {
-                    "kind": "bin"
-                }
-            },
-            "args": []
+            "program": "${workspaceFolder}/.bin/output",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "preLaunchTask": "rust: build",
+            "sourceLanguages": ["rust"]
+        },
+        {
+            "name": "Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/.bin/output",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "preLaunchTask": "rust: build",
+            "sourceLanguages": ["rust"]
         }
     ]
 }

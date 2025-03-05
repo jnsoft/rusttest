@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rust: build_hello",
+            "type": "shell",
+            "command": "rustc src/hello.rs -o .bin/output",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "rust: build",
+            "type": "shell",
+            "command": "rustc ${file} -o .bin/output",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$rustc"]
+        }
+    ]
+}
